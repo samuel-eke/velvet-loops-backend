@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
 
 export const  connectDB = async () =>{
-
-    await mongoose.connect('mongodb+srv://velvetloops:myvelvetloops@velvet-ecommerce.rhom9kv.mongodb.net/?retryWrites=true&w=majority&appName=velvet-ecommerce/velvetloopsstore').then(()=>console.log("DB Connected"));
-   
+    await mongoose.connect('mongodb+srv://velvetloops:myvelvetloops@velvet-ecommerce.rhom9kv.mongodb.net/velvetloopsstore?retryWrites=true&w=majority&appName=velvet-ecommerce').then(()=>console.log("DB Connected"));
 }
 
 
