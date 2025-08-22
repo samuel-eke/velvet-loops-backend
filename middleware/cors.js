@@ -1,5 +1,5 @@
 // Custom CORS middleware — only allow requests from https://myvelvetloop.com
-const allowedOrigin = "https://myvelvetloop.com";
+const allowedOrigin = "https://www.myvelvetloop.com";
 
 export default function corsMiddleware(req, res, next) {
 	const origin = req.headers.origin;
