@@ -1,5 +1,5 @@
 import express from "express";
-import cors from "./middleware/cors.js";
+import cors from "./middleware/corsonfig.js";
 import { connectDB } from "./config/db.js";
 import userRouter from "./routes/userRoute.js";
 import foodRouter from "./routes/foodRoute.js";
