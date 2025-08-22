@@ -1,8 +1,16 @@
 // corsConfig.js
 import cors from "cors";
 
+const allowedOrigins = ["https://www.myvelvetloop.com", "https://admin.myvelvetloop.com"]
+
 const corsOptions = {
-	origin: "https://www.myvelvetloop.com", // allow only this domain
+	origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // allow request
+    } else {
+      callback(new Error("Not allowed by CORS")); // block request
+    }
+  },
 	methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"], // allowed HTTP methods
 	// include the custom 'token' header your frontend sends, plus common headers
 	allowedHeaders: [
