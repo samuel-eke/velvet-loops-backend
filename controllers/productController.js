@@ -1,10 +1,10 @@
-import foodModel from "../models/foodModel.js";
+import foodModel from "../models/productModel.js";
 
 // 📌 List all foods (include images as Base64)
 const listFood = async (req, res) => {
   try {
     const foods = await foodModel.find({});
-    
+
     // convert each food's image buffer to base64 string
     const foodsWithImages = foods.map(food => ({
       _id: food._id,
@@ -12,8 +12,8 @@ const listFood = async (req, res) => {
       description: food.description,
       price: food.price,
       category: food.category,
-      image: food.image?.data 
-        ? `data:${food.image.contentType};base64,${food.image.data.toString("base64")}` 
+      image: food.image?.data
+        ? `data:${food.image.contentType};base64,${food.image.data.toString("base64")}`
         : null
     }));
 
