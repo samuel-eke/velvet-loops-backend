@@ -41,6 +41,7 @@ describe ("POST /api/user/register", () => {
 
         expect(res.statusCode).toBe(200);
         expect(res.body.success).toBe(false);
+        expect(res.body.message).toBe("Missing name, email or password");
     });
 
     
